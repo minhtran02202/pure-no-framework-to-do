@@ -13,10 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
     delete_btn.type = "button";
     delete_btn.textContent = "delete";
     delete_btn.id = "delete-" + count;
+    delete_btn.addEventListener("click", () => {
+      div.remove();
+    });
 
     div.appendChild(li);
     div.appendChild(delete_btn);
     list.appendChild(div);
     add_task.value = "";
+    count++;
   };
 });
