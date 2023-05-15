@@ -9,6 +9,8 @@ Here is how it look so far
 
 ![image](https://github.com/minhtran02202/pure-no-framework-to-do/blob/master/images/version1.jpg)
 
+---
+
 # Here are the features of the app that was developed over time (\* is not done)
 
 add task
@@ -28,3 +30,11 @@ load tasks
 \*color themes
 
 \*delete account
+
+---
+
+# What I learned so far
+
+css positioning and styling
+js element manipulation (create element, delete element...)
+localStorage
