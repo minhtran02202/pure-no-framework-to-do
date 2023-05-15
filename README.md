@@ -7,7 +7,7 @@ The app so far has these functionalities so far: add task, done/delete task, sav
 
 Here is how it look so far
 
-![image](https://github.com/minhtran02202/pure-no-framework-to-do/assets/50005387/e2a822fd-0cf7-4e2f-bdb5-ffa1fbdf008c)
+![image](https://github.com/minhtran02202/pure-no-framework-to-do/images/version1.jpg)
 
 # Here are the features of the app that was developed over time (\* is not done)
 
