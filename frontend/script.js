@@ -46,5 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
     add_task.value = "";
   };
 
+  add_task.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      submit_btn.click();
+    }
+  });
+
   loadTasks(taskList);
 });
