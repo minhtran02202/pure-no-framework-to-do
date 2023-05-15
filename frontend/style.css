@@ -37,7 +37,6 @@ body {
 }
 #color_themes {
   padding-top: 40px;
-  padding-left: 4vw;
 }
 
 input[type="text"] {
@@ -78,3 +77,8 @@ button {
   background-color: var(--submit-btn-color);
   width: 75px;
 }
+/* Example for dynamic header
+#add_task {
+  border: none;
+  background-color: var(--bg-color);
+}*/

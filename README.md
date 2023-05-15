@@ -19,12 +19,12 @@ save tasks
 
 load tasks
 
-*user log in and register
+\*user log in and register
 
-*setup mongodb to save and load each user's tasks
+\*setup mongodb to save and load each user's tasks
 
-*make a login/register page and sign out
+\*make a login/register page and sign out
 
-*dark mode
+\*color themes
 
-*delete account
+\*delete account
