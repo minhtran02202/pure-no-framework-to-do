@@ -35,6 +35,7 @@ load tasks
 
 # What I learned so far
 
-css positioning and styling
+css positioning, sizing, and styling
+choose color theme
 js element manipulation (create element, delete element...)
 localStorage
