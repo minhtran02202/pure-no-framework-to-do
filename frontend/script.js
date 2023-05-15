@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     add_task.value = "";
     const themes = new ColorThemes();
     //test
-    themes.darkMode(true);
+    //themes.darkMode(true);
   };
 
   add_task.addEventListener("keypress", (e) => {

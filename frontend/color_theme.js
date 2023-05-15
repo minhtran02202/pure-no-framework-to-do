@@ -12,7 +12,7 @@ class ColorThemes {
 
   darkMode(darkMode) {
     if (darkMode) {
-      this.#changeColor("#ccc", "black", "#f4f6f8", "#ccc", "white", "#ccc");
+      this.#changeColor("#ccc", "black", "#f4f6f8", "red", "white", "#ccc");
       console.log("dark mode");
     }
   }
