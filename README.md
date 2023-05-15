@@ -12,11 +12,19 @@ Here is how it look so far
 # Here are the features of the app that was developed over time (\* is not done)
 
 add task
+
 delete task
+
 save tasks
+
 load tasks
+
 *user log in and register
+
 *setup mongodb to save and load each user's tasks
+
 *make a login/register page and sign out
+
 *dark mode
-delete account
+
+*delete account
