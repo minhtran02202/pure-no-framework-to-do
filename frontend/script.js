@@ -6,7 +6,7 @@ function newTask(value, taskList) {
   var delete_btn = document.createElement("button");
 
   delete_btn.type = "button";
-  delete_btn.textContent = "done";
+  delete_btn.textContent = "Done";
   delete_btn.addEventListener("click", () => {
     div.remove();
     saveTasks();
@@ -36,6 +36,7 @@ function loadTasks(taskList) {
     for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
   }
 }
+
 document.addEventListener("DOMContentLoaded", function () {
   var taskList = document.getElementById("list");
   var add_task = document.getElementById("add_task");
@@ -44,6 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
   submit_btn.onclick = () => {
     newTask(add_task.value, taskList);
     add_task.value = "";
+    const themes = new ColorThemes();
+    //test
+    themes.darkMode(true);
   };
 
   add_task.addEventListener("keypress", (e) => {

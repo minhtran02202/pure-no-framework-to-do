@@ -1,12 +1,21 @@
+:root {
+  --bg-color: ivory;
+  --txt-color: #31797e;
+  --border-color: #b3c890;
+  --btn-color: #a2cc5f;
+  --btn-txt-color: #fff;
+  --submit-btn-color: #73a9ad;
+}
+
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: ivory;
+  background-color: var(--bg-color);
   width: 100%;
   height: auto;
-  color: #31797e;
+  color: var(--txt-color);
   font-family: "Ysabeau", sans-serif;
 }
 
@@ -14,7 +23,7 @@ body {
   margin-top: 10%;
   padding: 2vw 5vh;
   border-style: solid;
-  border: 3px solid #b3c890;
+  border: 3px solid var(--border-color);
   border-radius: 20px;
 }
 
@@ -22,7 +31,7 @@ input[type="text"] {
   padding: 5px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: #31797e;
+  color: var(--txt-color);
 }
 
 ul {
@@ -39,9 +48,9 @@ li {
 }
 
 button {
-  background-color: #b3c890;
+  background-color: var(--btn-color);
   border: none;
-  color: white;
+  color: var(--btn-txt-color);
   padding: 5px 20px;
   margin-top: 5%;
   border-radius: 10px;
@@ -49,5 +58,5 @@ button {
 }
 
 #submit {
-  background-color: #73a9ad;
+  background-color: var(--submit-btn-color);
 }
