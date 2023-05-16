@@ -5,34 +5,38 @@ class ColorThemes {
   constructor() {
     this.relaxingTheme = {
       bg_color: "ivory",
-      txt: "#31797e",
       border: "#b3c890",
       btn: "#307b58",
-      btn_txt: "#a2cc5f",
+      btn_txt: "#fff",
+      intput_bg: "#fff",
       submit_btn: "#31797e",
+      txt: "#31797e",
     };
 
     this.nightOwlTheme = {
-      bg_color: "black",
-      txt: "#31797e",
-      border: "#b3c890",
-      btn: "#a2cc5f",
-      btn_txt: "#a2cc5f",
-      submit_btn: "#73a9ad",
+      bg_color: "#393646",
+      border: "#F4EEE0",
+      btn: "#F4EEE0",
+      btn_txt: "#4F4557",
+      intput_bg: "#6d5d6e",
+      submit_btn: "#F4EEE0",
+      txt: "#F4EEE0",
     };
 
-    this.lovelyTheme = {
-      bg_color: "pink",
-      txt: "#31797e",
-      border: "#b3c890",
-      btn: "#a2cc5f",
-      btn_txt: "#a2cc5f",
-      submit_btn: "#73a9ad",
+    this.minimalTheme = {
+      bg_color: "#fff",
+      border: "#5f7582",
+      btn: "#617482",
+      btn_txt: "#fff",
+      intput_bg: "#fff",
+      submit_btn: "#826161",
+      txt: "#000",
     };
+
     this.themes = {
       relaxing: this.relaxingTheme,
       night_owl: this.nightOwlTheme,
-      lovely: this.lovelyTheme,
+      minimal: this.minimalTheme,
     };
   }
 
@@ -42,11 +46,12 @@ class ColorThemes {
       const root = document.documentElement;
 
       root.style.setProperty("--bg-color", theme.bg_color);
-      root.style.setProperty("--txt-color", theme.txt);
       root.style.setProperty("--border-color", theme.border);
       root.style.setProperty("--btn-color", theme.btn);
       root.style.setProperty("--btn-txt-color", theme.btn_txt);
+      root.style.setProperty("--input-bg-color", theme.intput_bg);
       root.style.setProperty("--submit-btn-color", theme.submit_btn);
+      root.style.setProperty("--txt-color", theme.txt);
     }
   }
 }
@@ -58,12 +63,13 @@ function saveColorTheme(theme) {
 
 function loadColorTheme(themes) {
   const savedColorTheme = localStorage.getItem("colorTheme");
+  const colorThemes = new ColorThemes();
   if (savedColorTheme) {
-    const colorThemes = new ColorThemes();
     const theme = JSON.parse(savedColorTheme);
     themes.value = theme;
-    console.log(themes.value);
     colorThemes.changeTheme(theme);
+  } else {
+    colorThemes.changeTheme("relaxing");
   }
 }
 

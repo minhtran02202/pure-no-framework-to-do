@@ -1,10 +1,11 @@
 :root {
   --bg-color: ivory;
-  --txt-color: #31797e;
   --border-color: #b3c890;
-  --btn-color: #a2cc5f;
-  --btn-txt-color: #a2cc5f;
-  --submit-btn-color: #73a9ad;
+  --btn-color: #307b58;
+  --btn-txt-color: #fff;
+  --input-bg-color: #fff;
+  --submit-btn-color: #31797e;
+  --txt-color: #31797e;
 }
 
 body {
@@ -41,11 +42,21 @@ body {
   font-size: 2em;
 }
 
+#add_task {
+  background-color: var(--input-bg-color);
+  color: var(--txt-color);
+}
+
+#add_task::placeholder {
+  color: var(--txt-color);
+}
+
 select[name="theme_choice"] {
   font-family: "Ysabeau", sans-serif;
   border: 1px solid #ccc;
   border-radius: 4px;
   color: var(--txt-color);
+  background-color: var(--input-bg-color);
 }
 
 input[type="text"] {
@@ -76,7 +87,7 @@ li {
 button {
   background-color: var(--btn-color);
   border: none;
-  color: white;
+  color: var(--btn-txt-color);
   padding: 5px 20px;
   margin-top: 5%;
   border-radius: 10px;
