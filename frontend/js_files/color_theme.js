@@ -48,10 +48,28 @@ class ColorThemes {
   }
 }
 
+function saveColorTheme(theme) {
+  localStorage.setItem("colorTheme", JSON.stringify(theme));
+}
+
+function loadColorTheme() {
+  const savedColorTheme = localStorage.getItem("colorTheme");
+  if (saveColorTheme) {
+    const colorThemes = new ColorThemes();
+    const theme = JSON.parse(savedColorTheme);
+    //console.log(theme);
+    colorThemes.changeTheme(theme);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
+  loadColorTheme();
   const themes = document.getElementById("theme_choice");
   const colorThemes = new ColorThemes();
+
   themes.addEventListener("change", (e) => {
-    colorThemes.changeTheme(e.target.value);
+    var theme = e.target.value;
+    colorThemes.changeTheme(theme);
+    saveColorTheme(theme);
   });
 });

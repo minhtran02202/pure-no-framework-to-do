@@ -39,6 +39,7 @@ function loadTasks(taskList) {
 
 document.addEventListener("DOMContentLoaded", function () {
   var taskList = document.getElementById("list");
+  loadTasks(taskList);
   var add_task = document.getElementById("add_task");
   var submit_btn = document.getElementById("submit");
 
@@ -55,6 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
       submit_btn.click();
     }
   });
-
-  loadTasks(taskList);
 });
