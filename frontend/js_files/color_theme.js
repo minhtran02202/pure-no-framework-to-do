@@ -36,7 +36,7 @@ class ColorThemes {
   changeTheme(userTheme) {
     if (Object.values(this.themes).indexOf(userTheme)) {
       const theme = this.themes[userTheme];
-      var root = document.documentElement;
+      const root = document.documentElement;
 
       root.style.setProperty("--bg-color", theme.bg_color);
       root.style.setProperty("--txt-color", theme.txt);
@@ -57,7 +57,6 @@ function loadColorTheme() {
   if (saveColorTheme) {
     const colorThemes = new ColorThemes();
     const theme = JSON.parse(savedColorTheme);
-    //console.log(theme);
     colorThemes.changeTheme(theme);
   }
 }
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const colorThemes = new ColorThemes();
 
   themes.addEventListener("change", (e) => {
-    var theme = e.target.value;
+    const theme = e.target.value;
     colorThemes.changeTheme(theme);
     saveColorTheme(theme);
   });

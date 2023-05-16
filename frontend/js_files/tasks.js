@@ -1,9 +1,9 @@
 function newTask(value, taskList) {
-  var div = document.createElement("div");
+  const div = document.createElement("div");
   div.className = "list_item";
-  var li = document.createElement("li");
+  const li = document.createElement("li");
   li.textContent = value;
-  var delete_btn = document.createElement("button");
+  const delete_btn = document.createElement("button");
 
   delete_btn.type = "button";
   delete_btn.textContent = "Done";
@@ -22,7 +22,7 @@ function newTask(value, taskList) {
 
 function saveTasks() {
   var tasks = [];
-  var listItems = document.getElementsByClassName("list_item");
+  const listItems = document.getElementsByClassName("list_item");
   for (var i = 0; i < listItems.length; i++) {
     tasks.push(listItems[i].querySelector("li").textContent);
   }
@@ -30,25 +30,22 @@ function saveTasks() {
 }
 
 function loadTasks(taskList) {
-  var saveTasks = localStorage.getItem("tasks");
+  const saveTasks = localStorage.getItem("tasks");
   if (saveTasks) {
-    var tasks = JSON.parse(saveTasks);
+    const tasks = JSON.parse(saveTasks);
     for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  var taskList = document.getElementById("list");
+  const taskList = document.getElementById("list");
   loadTasks(taskList);
-  var add_task = document.getElementById("add_task");
-  var submit_btn = document.getElementById("submit");
+  const add_task = document.getElementById("add_task");
+  const submit_btn = document.getElementById("submit");
 
   submit_btn.onclick = () => {
     newTask(add_task.value, taskList);
     add_task.value = "";
-    const themes = new ColorThemes();
-    //test
-    //themes.darkMode(true);
   };
 
   add_task.addEventListener("keypress", (e) => {
