@@ -1,5 +1,7 @@
 # pure-no-framework-to-do
 
+Try it here: https://minhtran02202.github.io/pure-no-framework-to-do/
+
 This is a small project for me to remind myself how to design a web application with just html, css, and javascript.
 The purpose of this is to refresh my head from the boxed thinking of working only within a framework like React or Vue.
 
