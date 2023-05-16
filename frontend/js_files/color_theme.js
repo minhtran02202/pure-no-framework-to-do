@@ -1,4 +1,5 @@
 //add comments and choose color themes
+//clean up css
 
 class ColorThemes {
   constructor() {
