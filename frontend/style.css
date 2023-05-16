@@ -41,7 +41,7 @@ body {
   font-size: 2em;
 }
 
-select[name="color_themes"] {
+select[name="theme_choice"] {
   font-family: "Ysabeau", sans-serif;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -135,7 +135,7 @@ button {
   label[for="color_theme"] {
     font-size: 1.2em;
   }
-  select[name="color_themes"] {
+  select[name="theme_choice"] {
     font-size: 1em;
 
     border: 2px solid #ccc;
