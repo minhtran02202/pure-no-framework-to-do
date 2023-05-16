@@ -7,9 +7,9 @@ class ColorThemes {
       bg_color: "ivory",
       txt: "#31797e",
       border: "#b3c890",
-      btn: "#a2cc5f",
+      btn: "#307b58",
       btn_txt: "#a2cc5f",
-      submit_btn: "#73a9ad",
+      submit_btn: "#31797e",
     };
 
     this.nightOwlTheme = {

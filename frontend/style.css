@@ -61,10 +61,11 @@ input[type="text"] {
 ul {
   list-style-type: none;
   overflow-wrap: break-word;
+  padding-left: 0;
 }
 
 li {
-  font-size: larger;
+  font-size: 1.5em;
 }
 
 .list_item {
@@ -141,6 +142,7 @@ button {
   }
 
   #user_name {
+    margin-top: 4vh;
     min-width: 150px;
   }
 
@@ -148,7 +150,7 @@ button {
     padding-top: 3vw;
   }
 
-  label[for="color_theme"] {
+  label[for="theme_choice"] {
     font-size: 1.2em;
   }
   select[name="theme_choice"] {
@@ -164,6 +166,6 @@ button {
     padding: 8px 16px;
     border: 2px solid #ccc;
     border-radius: 6px;
-    height: 20px;
+    height: 10px;
   }
 }
