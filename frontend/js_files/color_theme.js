@@ -32,20 +32,18 @@ class ColorThemes {
       lovely: this.lovelyTheme,
     };
   }
-  #changeColor(theme) {
-    var root = document.documentElement;
-
-    root.style.setProperty("--bg-color", theme.bg_color);
-    root.style.setProperty("--txt-color", theme.txt);
-    root.style.setProperty("--border-color", theme.border);
-    root.style.setProperty("--btn-color", theme.btn);
-    root.style.setProperty("--btn-txt-color", theme.btn_txt);
-    root.style.setProperty("--submit-btn-color", theme.submit_btn);
-  }
 
   changeTheme(userTheme) {
     if (Object.values(this.themes).indexOf(userTheme)) {
-      this.#changeColor(this.themes[userTheme]);
+      const theme = this.themes[userTheme];
+      var root = document.documentElement;
+
+      root.style.setProperty("--bg-color", theme.bg_color);
+      root.style.setProperty("--txt-color", theme.txt);
+      root.style.setProperty("--border-color", theme.border);
+      root.style.setProperty("--btn-color", theme.btn);
+      root.style.setProperty("--btn-txt-color", theme.btn_txt);
+      root.style.setProperty("--submit-btn-color", theme.submit_btn);
     }
   }
 }
