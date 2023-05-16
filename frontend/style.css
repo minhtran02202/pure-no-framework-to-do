@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   background-color: var(--bg-color);
   width: 100%;
-  height: auto;
+  min-height: 100vh;
   color: var(--txt-color);
   font-family: "Ysabeau", sans-serif;
 }
@@ -26,17 +26,21 @@ body {
   border: 3px solid var(--border-color);
   border-radius: 20px;
   min-width: 350px;
-  max-width: 50vw;
+  max-width: 80%;
 }
 
 #user_customize {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 #user_name {
   min-width: 150px;
 }
+
 #color_themes {
-  padding-top: 40px;
+  padding-top: 4.2vw;
 }
 
 input[type="text"] {
@@ -77,8 +81,28 @@ button {
   background-color: var(--submit-btn-color);
   width: 75px;
 }
-/* Example for dynamic header
-#add_task {
-  border: none;
-  background-color: var(--bg-color);
-}*/
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* Adjustments for smaller screens */
+  #app_block {
+    margin-top: 5%;
+    padding: 1vw 2vh;
+    min-width: 60vw;
+    max-width: 80vw;
+  }
+
+  #user_name {
+    min-width: 100px;
+    padding-right: 2vw;
+    margin-bottom: 2vw;
+  }
+
+  #color_themes {
+    margin-bottom: 5vw;
+  }
+
+  input[type="text"] {
+    width: 50%;
+  }
+}
