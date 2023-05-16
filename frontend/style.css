@@ -88,6 +88,21 @@ button {
 }
 
 /* Media Queries */
+@media (max-width: 334px) {
+  #user_interact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #add_task {
+    width: auto;
+  }
+
+  #submit {
+    width: 50vw;
+  }
+}
 @media (max-width: 768px) {
   #app_block {
     margin-top: 5%;
@@ -103,7 +118,8 @@ button {
   }
 
   #color_themes {
-    margin-bottom: 5vw;
+    padding-top: 4vh;
+    margin-bottom: 2vh;
   }
 
   input[type="text"] {

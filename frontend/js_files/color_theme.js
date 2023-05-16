@@ -1,3 +1,5 @@
+//add comments and choose color themes
+
 class ColorThemes {
   constructor() {
     this.relaxingTheme = {
