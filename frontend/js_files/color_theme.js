@@ -58,7 +58,7 @@ function saveColorTheme(theme) {
 
 function loadColorTheme(themes) {
   const savedColorTheme = localStorage.getItem("colorTheme");
-  if (saveColorTheme) {
+  if (savedColorTheme) {
     const colorThemes = new ColorThemes();
     const theme = JSON.parse(savedColorTheme);
     themes.value = theme;
