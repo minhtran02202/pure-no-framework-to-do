@@ -48,22 +48,25 @@ class ColorThemes {
   }
 }
 
+//also set the dropdown to appropriate theme
 function saveColorTheme(theme) {
   localStorage.setItem("colorTheme", JSON.stringify(theme));
 }
 
-function loadColorTheme() {
+function loadColorTheme(themes) {
   const savedColorTheme = localStorage.getItem("colorTheme");
   if (saveColorTheme) {
     const colorThemes = new ColorThemes();
     const theme = JSON.parse(savedColorTheme);
+    themes.value = theme;
+    console.log(themes.value);
     colorThemes.changeTheme(theme);
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadColorTheme();
   const themes = document.getElementById("theme_choice");
+  loadColorTheme(themes);
   const colorThemes = new ColorThemes();
 
   themes.addEventListener("change", (e) => {
