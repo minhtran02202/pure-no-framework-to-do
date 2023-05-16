@@ -37,10 +37,19 @@ body {
 
 #user_name {
   min-width: 150px;
+  margin-bottom: 0;
+  font-size: 2em;
 }
 
 #color_themes {
   padding-top: 4.2vw;
+}
+
+select[name="color_themes"] {
+  font-family: "Ysabeau", sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: var(--txt-color);
 }
 
 input[type="text"] {
@@ -104,5 +113,45 @@ button {
 
   input[type="text"] {
     width: 50%;
+  }
+}
+@media (min-width: 769px) {
+  /* Adjustments for larger screens */
+  #app_block {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding: 3vw 6vh; /* Adjusted padding */
+    border-style: solid;
+    border: 4px solid var(--border-color); /* Adjusted border width */
+    border-radius: 20px;
+    min-width: 400px;
+    max-width: 80%;
+    min-height: 400px;
+    max-height: 80%;
+  }
+
+  #user_name {
+    min-width: 150px;
+  }
+
+  #color_themes {
+    padding-top: 2.5vw; /* Adjusted padding */
+  }
+
+  label[for="color_theme"] {
+    font-size: 1.2em;
+  }
+  select[name="color_themes"] {
+    font-size: 1.2em; /* Increased font size */
+
+    border: 2px solid #ccc; /* Adjusted border width */
+    border-radius: 6px; /* Adjusted border radius */
+  }
+
+  input[type="text"] {
+    padding: 8px 16px; /* Adjusted padding */
+    border: 2px solid #ccc; /* Adjusted border width */
+    border-radius: 6px; /* Adjusted border radius */
+    height: 20px; /* Increased height */
   }
 }
