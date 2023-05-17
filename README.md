@@ -23,13 +23,13 @@ save tasks
 
 load tasks
 
+color themes
+
 \*user log in and register
 
 \*setup mongodb to save and load each user's tasks
 
 \*make a login/register page and sign out
-
-\*color themes
 
 \*delete account
 
@@ -39,7 +39,7 @@ load tasks
 
 css positioning, sizing, and styling
 
-choose color theme
+changing and choose color theme
 
 js element manipulation (create element, delete element...)
 

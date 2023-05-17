@@ -30,7 +30,7 @@ class ColorThemes {
       btn_txt: "#fff",
       intput_bg: "#fff",
       submit_btn: "#826161",
-      txt: "#000",
+      txt: "#292929",
     };
 
     this.themes = {
