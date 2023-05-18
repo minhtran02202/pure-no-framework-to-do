@@ -39,7 +39,11 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-
+#user_interact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #user_name {
   min-width: 150px;
   margin-bottom: 0;
@@ -56,6 +60,8 @@ select[name="theme_choice"] {
 
 #add_task {
   background-color: var(--input-bg-color);
+  font-family: var(--font-family);
+  font-size: 1.2rem;
 }
 
 #add_task::placeholder {
@@ -100,7 +106,9 @@ button {
 
 #submit {
   background-color: var(--submit-btn-color);
-  width: 75px;
+  margin-top: 0;
+  height: auto;
+  width: auto;
 }
 
 /* Media Queries */
@@ -135,7 +143,8 @@ button {
   }
 
   #submit {
-    width: 50vw;
+    width: 25vw;
+    margin-top: 25px;
   }
 
   input[type="text"] {
