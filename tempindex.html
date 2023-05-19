@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="frontend/style.css" />
+    <script src="./frontend/js_files/tasks.js"></script>
+    <script src="./frontend/js_files/color_theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>To-Do Practice App</title>
+  </head>
+  <body>
+    <div id="app_block">
+      <div id="user_customize">
+      <h1 id="user_name">My App</h1>
+      <form id="color_themes">
+        <label for="theme_choice">My Color Theme:</label>
+        <select name="theme_choice" id="theme_choice">
+          <option value="relaxing">Relaxing</option>
+          <option value="night_owl">Night Owl</option>
+          <option value="minimal">Minimal</option>
+        </select>
+        </label>
+      </form>
+      </div>
+
+      <div id="user_interact">
+        <input id="add_task" type="text" placeholder="Add task here" />
+        <button id="submit" type="submit">Add</button>
+      </div>  
+      <ul id="list"></ul>
+    </div>
+    
+  </body>
+</html>

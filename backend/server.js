@@ -1,20 +1,19 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 const app = express();
 const port = 3000;
 
-// middleware and routes
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const users = [];
+app.get("/users", (req, res) => {
+  res.json(users);
+});
 
-//Connect to MongoDB
-mongoose.connect("mongodb://localhost:27017/to-do", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+app.post("/login", (req, res) => {
+  const user = { name: req.body.name, password: req.body.password };
+  users.push(user);
+  res.json(req.body);
 });
 
 app.listen(port, () => {
-  console.log(`Server is listening to port ${port}`);
+  console.log(`Server is listening on port ${port}`);
 });
