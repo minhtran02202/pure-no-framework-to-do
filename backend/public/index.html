@@ -17,13 +17,15 @@
 
     <script>
       const loginForm = document.getElementById("loginForm");
+      const apiurl = "http://localhost:3000/";
+      const route = "user/register";
 
       loginForm.addEventListener("submit", (event) => {
         event.preventDefault();
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        fetch("http://localhost:3000/register", {
+        fetch(`${apiurl + route}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

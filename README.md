@@ -46,3 +46,9 @@ js element manipulation (create element, delete element...)
 localStorage
 
 cannot add listerner event to option. Do it through <select>, on change, using e.target.value
+
+set up express backend
+
+set up routes
+
+\* store data in mongodb
