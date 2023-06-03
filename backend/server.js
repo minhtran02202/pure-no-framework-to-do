@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require("path");
 const userRoute = require("./routes/UserRoute");
 const app = express();
 const port = 3000;
@@ -19,9 +18,8 @@ app.use(
 
 //Connect MongoDB
 mongoose
-  .connect(process.env.MONGODB_URL, {
+  .connect(process.env.ATLAS_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true,
   })
   .then((result) => {
     console.log(`Connected to ${result.connection.name}`);
@@ -31,10 +29,6 @@ mongoose
   });
 //console.log(process.env.MONGODB_URL);
 
-/*app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});*/
-
 app.use("/user", userRoute);
 
 app.listen(port, () => {
@@ -43,5 +37,6 @@ app.listen(port, () => {
 
 app.use(express.static("../frontend"));
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend", "index.html"));
+  //res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "../frontend/index.html");
 });

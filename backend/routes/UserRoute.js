@@ -1,6 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const router = express.Router();
+const User = require("../User");
 
 const users = [];
 
@@ -17,6 +18,14 @@ router.post("/register", async (req, res) => {
   } catch (e) {
     res.status(500).send(e);
   }
+  /*
+  const newUser = new User({
+    username: req.body.username,
+    password: hashedPassword,
+  });
+
+  newUser.save();
+  */
 });
 
 router.post("/login", async (req, res, next) => {
