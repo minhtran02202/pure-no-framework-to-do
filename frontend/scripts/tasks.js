@@ -27,7 +27,33 @@ function saveTasks() {
     tasks.push(listItems[i].querySelector("li").textContent);
   }
   localStorage.setItem("tasks", JSON.stringify(tasks));
+
+  /*
+        const task = listItems[i].querySelector("li").textContent)
+        fetch(`${apiurl + route}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ task }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((error) => {
+            console.log("An error occurred:", error);
+          });
+
+  //Backend route 
+  var tasks = []
+  tasks.push(req.body.task)
+  User.findOneAndUpdate({username: req.body.usernames}, {Tasks: tasks})
+
+  })*/
 }
+
+console.log(username);
 
 function loadTasks(taskList) {
   const saveTasks = localStorage.getItem("tasks");
@@ -35,6 +61,24 @@ function loadTasks(taskList) {
     const tasks = JSON.parse(saveTasks);
     for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
   }
+
+  /*
+    fetch backend to get user tasks
+
+    //backend
+    const temp = User.findOne({username: req.body.username})
+    res.send(name.Tasks)
+
+    //frontend
+    .then(data)=>{
+      if(data){
+        const tasks = JSON.parse(data)
+        for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
+      }
+    }
+
+
+  */
 }
 
 document.addEventListener("DOMContentLoaded", function () {
