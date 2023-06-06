@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoute = require("./routes/UserRoute");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 require("dotenv").config();
 +app.use(express.json());
@@ -32,7 +32,7 @@ mongoose
 app.use("/user", userRoute);
 
 app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+  console.log(`Server is listening to http://localhost:${port}/`);
 });
 
 app.use(express.static("../frontend"));

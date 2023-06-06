@@ -4,10 +4,12 @@ const router = express.Router();
 const User = require("../User");
 
 const users = [];
+var username;
 
+/*
 router.get("/get_users", (req, res) => {
   res.json(users);
-});
+});*/
 
 router.post("/register", async (req, res) => {
   try {
@@ -25,17 +27,33 @@ router.post("/register", async (req, res) => {
   });
 
   newUser.save();
+
+
+  //Update a collection
+  User.findOne({id: "find", thing: update, (e)=>{
+    if (e){
+      console.log(e)
+    }
+  }})
+
+  //Delete a collection
+  User.deleteOne({id: delete}, (e)=>{
+    if (e){
+      console.log(e)
+    }
+  }
   */
 });
 
 router.post("/login", async (req, res, next) => {
-  const user = users.find((user) => user.username === req.body.username);
-  if (user == null) {
+  const verifyUser = users.find((user) => user.username === req.body.username);
+  if (verifyUser == null) {
     return res.status(400).send("Can't find user");
   }
   try {
     const compare = await bcrypt.compare(req.body.password, user.password);
     if (compare) {
+      username = req.body.username;
       res.send("Yay!");
     } else {
       res.send("Oh No!");
