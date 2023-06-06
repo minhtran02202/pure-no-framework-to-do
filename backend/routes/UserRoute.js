@@ -54,6 +54,7 @@ router.post("/login", async (req, res, next) => {
     const compare = await bcrypt.compare(req.body.password, user.password);
     if (compare) {
       username = req.body.username;
+      //localstorage.setItem("username", req.body.username)
       res.send("Yay!");
     } else {
       res.send("Oh No!");
