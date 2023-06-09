@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 require("dotenv").config();
-+app.use(express.json());
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
@@ -35,8 +35,8 @@ app.listen(port, () => {
   console.log(`Server is listening to http://localhost:${port}/`);
 });
 
-app.use(express.static("../frontend"));
+//app.use(express.static("../frontend"));
 app.get("/*", (req, res) => {
-  //res.sendFile(__dirname + "/public/index.html");
-  res.sendFile(__dirname + "../frontend/index.html");
+  res.sendFile(__dirname + "/public/index.html");
+  //res.sendFile(__dirname + "../frontend/index.html");
 });

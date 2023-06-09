@@ -1,0 +1,19 @@
+{
+  "name": "pure-no-framework-to-do",
+  "version": "1.0.0",
+  "description": "Try it here: https://minhtran02202.github.io/pure-no-framework-to-do/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhtran02202/pure-no-framework-to-do.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhtran02202/pure-no-framework-to-do/issues"
+  },
+  "homepage": "https://github.com/minhtran02202/pure-no-framework-to-do#readme"
+}
