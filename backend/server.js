@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const userRoute = require("./routes/UserRoute");
+const LocalStorage = require("node-localstorage").LocalStorage;
+global.localStorage = new LocalStorage("./scratch");
+
 const app = express();
 const port = process.env.PORT || 3000;
 

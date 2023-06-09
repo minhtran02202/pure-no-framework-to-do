@@ -3,26 +3,11 @@ const bcrypt = require("bcrypt");
 const router = express.Router();
 const User = require("../User");
 
-const users = [];
-var username;
-
-/*
-router.get("/get_users", (req, res) => {
-  res.json(users);
-});*/
+router.get("/get_users", async (req, res) => {
+  res.json(await User.find());
+});
 
 router.post("/register", async (req, res) => {
-  //Simple register
-  /*try {
-    const hashedPassword = await bcrypt.hash(req.body.password, 10);
-    const user = { username: req.body.username, password: hashedPassword };
-    users.push(user);
-    console.log(req.body.username);
-    res.json(user);
-  } catch (e) {
-    res.status(500).send(e);
-  }*/
-
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const newUser = new User({
@@ -34,21 +19,6 @@ router.post("/register", async (req, res) => {
   } catch (e) {
     res.status(500).send(e);
   }
-
-  //Update a collection (change password)
-  /*User.findOne({id: "find", thing: update, (e)=>{
-    if (e){
-      console.log(e)
-    }
-  }})
-
-  //Delete a collection
-  User.deleteOne({id: delete}, (e)=>{
-    if (e){
-      console.log(e)
-    }
-  }
-  */
 });
 
 router.post("/login", async (req, res) => {
@@ -59,7 +29,8 @@ router.post("/login", async (req, res) => {
   try {
     bcrypt.compare(req.body.password, verifyUser.password, (err, result) => {
       if (result == true) {
-        //localStorage.setItem("username", req.body.username);
+        localStorage.setItem("username", JSON.stringify(req.body.username));
+        //console.log(localStorage.getItem("username"));
         res.send("Log in success");
       } else {
         res.send("Log in failed");
@@ -70,4 +41,6 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//router.post("/logout")
+//router.post("/delete_account")
 module.exports = router;
