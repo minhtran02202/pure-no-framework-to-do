@@ -12,7 +12,8 @@ router.get("/get_users", (req, res) => {
 });*/
 
 router.post("/register", async (req, res) => {
-  try {
+  //Simple register
+  /*try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const user = { username: req.body.username, password: hashedPassword };
     users.push(user);
@@ -20,18 +21,22 @@ router.post("/register", async (req, res) => {
     res.json(user);
   } catch (e) {
     res.status(500).send(e);
+  }*/
+
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const newUser = new User({
+      username: req.body.username,
+      password: hashedPassword,
+    });
+    await newUser.save();
+    res.send(`User ${newUser.username} is registered`);
+  } catch (e) {
+    res.status(500).send(e);
   }
-  /*
-  const newUser = new User({
-    username: req.body.username,
-    password: hashedPassword,
-  });
 
-  newUser.save();
-
-
-  //Update a collection
-  User.findOne({id: "find", thing: update, (e)=>{
+  //Update a collection (change password)
+  /*User.findOne({id: "find", thing: update, (e)=>{
     if (e){
       console.log(e)
     }
@@ -46,23 +51,22 @@ router.post("/register", async (req, res) => {
   */
 });
 
-router.post("/login", async (req, res, next) => {
-  const verifyUser = users.find((user) => user.username === req.body.username);
-  if (verifyUser == null) {
-    return res.status(400).send("Can't find user");
-  }
+router.post("/login", async (req, res) => {
+  const verifyUser = await User.findOne({ username: req.body.username });
+
+  if (verifyUser == null) res.status(400).send("Can't find user");
+
   try {
-    const compare = await bcrypt.compare(req.body.password, user.password);
-    if (compare) {
-      username = req.body.username;
-      //localstorage.setItem("username", req.body.username)
-      res.send("Yay!");
-    } else {
-      res.send("Oh No!");
-    }
+    bcrypt.compare(req.body.password, verifyUser.password, (err, result) => {
+      if (result == true) {
+        //localStorage.setItem("username", req.body.username);
+        res.send("Log in success");
+      } else {
+        res.send("Log in failed");
+      }
+    });
   } catch (e) {
-    return next(e);
-    //res.status(500).send(e);
+    res.status(500).send(e);
   }
 });
 

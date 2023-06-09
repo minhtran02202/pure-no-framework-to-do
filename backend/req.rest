@@ -11,15 +11,15 @@ Content-Type: application/json
 
 {
   "username": "minh",
-  "password": "password"
+  "password": "pass"
 }
 
 ###
 
-POST http://localhost:3000/user/login HTTP/1.1
+POST http://localhost:3000/user/login
 Content-Type: application/json
 
 {
   "username": "minh",
-  "password": "password"
+  "password": "pass"
 }
