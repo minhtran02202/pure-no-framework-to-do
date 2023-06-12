@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const userRoute = require("./routes/UserRoute");
 const LocalStorage = require("node-localstorage").LocalStorage;
 global.localStorage = new LocalStorage("./scratch");
+
+const userRoute = require("./routes/UserRoute");
+const tasksRoute = require("./routes/TasksRoute");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -33,6 +35,7 @@ mongoose
 //console.log(process.env.MONGODB_URL);
 
 app.use("/user", userRoute);
+app.use("/tasks", tasksRoute);
 
 app.listen(port, () => {
   console.log(`Server is listening to http://localhost:${port}/`);

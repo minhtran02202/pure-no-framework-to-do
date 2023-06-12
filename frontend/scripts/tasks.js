@@ -20,40 +20,35 @@ function newTask(value, taskList) {
   saveTasks();
 }
 
+function apiCall(method, route, data) {
+  const apiUrl = `https://localhost:3000 ${route}`;
+
+  fetch(apiUrl, {
+    method: method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log("An error occurred:", error);
+    });
+}
+
 function saveTasks() {
   var tasks = [];
   const listItems = document.getElementsByClassName("list_item");
   for (var i = 0; i < listItems.length; i++) {
     tasks.push(listItems[i].querySelector("li").textContent);
   }
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-
-  /*
-        const task = listItems[i].querySelector("li").textContent)
-        fetch(`${apiurl + route}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ task }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-          })
-          .catch((error) => {
-            console.log("An error occurred:", error);
-          });
-
-  //Backend route 
-  var tasks = []
-  tasks.push(req.body.task)
-  User.findOneAndUpdate({username: req.body.usernames}, {Tasks: tasks})
-
-  })*/
+  apiCall("POST", "tasks/save_tasks", tasks);
 }
 
-console.log(username);
+//console.log(username);
 
 function loadTasks(taskList) {
   const saveTasks = localStorage.getItem("tasks");
