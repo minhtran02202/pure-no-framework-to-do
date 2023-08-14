@@ -11,8 +11,7 @@ router.post("/register", async (req, res) => {
   try {
     const checkUser = await User.exists({ username: req.body.username });
     if (checkUser) {
-      console.log(checkUser);
-      res.send("User already existed");
+      res.send({ res: "User already existed" });
       return;
     }
 
@@ -22,29 +21,29 @@ router.post("/register", async (req, res) => {
       password: hashedPassword,
     });
     await newUser.save();
-    res.send(`User ${newUser.username} is registered`);
+    res.send({ res: `User ${newUser.username} is registered` });
   } catch (e) {
     console.log(e);
-    res.status(500).send(e);
+    res.status(500).send({ err: e });
   }
 });
 
 router.post("/login", async (req, res) => {
   const verifyUser = await User.findOne({ username: req.body.username });
 
-  if (verifyUser == null) res.status(400).send("Can't find user");
+  if (verifyUser == null) res.status(400).send({ res: "Can't find user" });
 
   try {
     bcrypt.compare(req.body.password, verifyUser.password, (err, result) => {
       if (result == true) {
         localStorage.setItem("id", JSON.stringify(verifyUser._id));
-        res.send("Log in success");
+        res.send({ res: "Log in success" });
       } else {
-        res.send("Log in failed");
+        res.send({ res: "Log in failed" });
       }
     });
   } catch (e) {
-    res.status(500).send(e);
+    res.status(500).send({ err: e });
   }
 });
 
