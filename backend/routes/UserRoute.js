@@ -9,8 +9,9 @@ router.get("/get_users", async (req, res) => {
 
 router.post("/register", async (req, res) => {
   try {
-    const checkUser = User.exists({ username: req.body.username });
-    if (checkUser != null) {
+    const checkUser = await User.exists({ username: req.body.username });
+    if (checkUser) {
+      console.log(checkUser);
       res.send("User already existed");
       return;
     }
