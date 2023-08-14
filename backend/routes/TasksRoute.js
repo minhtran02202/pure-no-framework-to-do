@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../User");
+const User = require("../schema/User");
 
 router.post("/save_tasks", async (req, res) => {
   try {
