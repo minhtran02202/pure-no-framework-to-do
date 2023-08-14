@@ -11,7 +11,8 @@ router.post("/register", async (req, res) => {
   try {
     const checkUser = User.exists({ username: req.body.username });
     if (checkUser != null) {
-      throw new Error("User already existed");
+      res.send("User already existed");
+      return;
     }
 
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
