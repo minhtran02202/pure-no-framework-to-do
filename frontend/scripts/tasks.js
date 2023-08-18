@@ -48,8 +48,6 @@ function saveTasks() {
   apiCall("POST", "tasks/save_tasks", tasks);
 }
 
-//console.log(username);
-
 function loadTasks(taskList) {
   /*const saveTasks = localStorage.getItem("tasks");
   if (saveTasks) {

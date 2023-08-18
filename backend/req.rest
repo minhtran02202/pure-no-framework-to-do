@@ -2,8 +2,12 @@ POST http://localhost:3000/tasks/save_tasks
 Content-Type: application/json
 
 {
-  "data": ["list1"]
+  "data": ["list1", "list2", "dog"]
 }
+
+###
+
+GET http://localhost:3000/tasks/load_tasks
 
 ###
 

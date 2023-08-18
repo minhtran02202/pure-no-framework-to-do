@@ -9,7 +9,7 @@ router.post("/save_tasks", async (req, res) => {
       { tasks: req.body.data },
       { new: true }
     );
-    res.status(200).send(user);
+    res.status(200).send(user.tasks);
   } catch (e) {
     res.status(400).send({ err: e });
   }
