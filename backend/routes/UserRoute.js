@@ -37,8 +37,10 @@ router.post("/login", async (req, res) => {
     bcrypt.compare(req.body.password, verifyUser.password, (err, result) => {
       if (result == true) {
         localStorage.setItem("id", JSON.stringify(verifyUser._id));
+        // send user to add page
         res.send({ res: "Log in success" });
       } else {
+        // refresh back the login page
         res.send({ res: "Log in failed" });
       }
     });
@@ -47,6 +49,14 @@ router.post("/login", async (req, res) => {
   }
 });
 
-//router.post("/logout")
+router.get("/logout", async (req, res) => {
+  try {
+    localStorage.setItem("id", "");
+    // send user back to login page
+    res.status(200).send("Log out successfull");
+  } catch (err) {
+    res.status(500).send({ err: e });
+  }
+});
 //router.post("/delete_account")
 module.exports = router;

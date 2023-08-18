@@ -32,3 +32,7 @@ Content-Type: application/json
   "username": "minh",
   "password": "pass"
 }
+
+###
+
+GET http://localhost:3000/user/logout
