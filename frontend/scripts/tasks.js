@@ -51,29 +51,17 @@ function saveTasks() {
 //console.log(username);
 
 function loadTasks(taskList) {
-  const saveTasks = localStorage.getItem("tasks");
+  /*const saveTasks = localStorage.getItem("tasks");
+  if (saveTasks) {
+    const tasks = JSON.parse(saveTasks);
+    for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
+  }*/
+
+  const saveTasks = apiCall("GET", "tasks/load_tasks");
   if (saveTasks) {
     const tasks = JSON.parse(saveTasks);
     for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
   }
-
-  /*
-    fetch backend to get user tasks
-
-    //backend
-    const temp = User.findOne({username: req.body.username})
-    res.send(name.Tasks)
-
-    //frontend
-    .then(data)=>{
-      if(data){
-        const tasks = JSON.parse(data)
-        for (var i = 0; i < tasks.length; i++) newTask(tasks[i], taskList);
-      }
-    }
-
-
-  */
 }
 
 document.addEventListener("DOMContentLoaded", function () {

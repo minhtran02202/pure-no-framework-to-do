@@ -11,8 +11,18 @@ router.post("/save_tasks", async (req, res) => {
     );
     res.status(200).send(user);
   } catch (e) {
-    res.status(400).send(e);
+    res.status(400).send({ err: e });
   }
 });
 
+router.get("/load_tasks", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      _id: JSON.parse(localStorage.getItem("id")),
+    });
+    res.status(200).send(user.tasks);
+  } catch (e) {
+    res.status(400).send({ err: e });
+  }
+});
 module.exports = router;
