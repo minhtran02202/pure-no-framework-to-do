@@ -32,7 +32,6 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-//console.log(process.env.MONGODB_URL);
 
 app.use("/user", userRoute);
 app.use("/tasks", tasksRoute);
@@ -41,8 +40,11 @@ app.listen(port, () => {
   console.log(`Server is listening to http://localhost:${port}/`);
 });
 
-//app.use(express.static("../frontend"));
 app.get("/*", (req, res) => {
+  if (localStorage.getItem("login_success") === "true") {
+    //send to app page
+  } else {
+    //send to login page
+  }
   res.sendFile(__dirname + "/public/index.html");
-  //res.sendFile(__dirname + "../frontend/index.html");
 });

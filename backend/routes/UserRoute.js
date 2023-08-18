@@ -37,6 +37,7 @@ router.post("/login", async (req, res) => {
     bcrypt.compare(req.body.password, verifyUser.password, (err, result) => {
       if (result == true) {
         localStorage.setItem("id", JSON.stringify(verifyUser._id));
+        localStorage.setItem("login_success", "true");
         // send user to add page
         res.send({ res: "Log in success" });
       } else {
