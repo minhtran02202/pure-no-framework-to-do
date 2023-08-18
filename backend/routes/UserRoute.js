@@ -38,7 +38,7 @@ router.post("/login", async (req, res) => {
       if (result == true) {
         localStorage.setItem("id", JSON.stringify(verifyUser._id));
         localStorage.setItem("login_success", "true");
-        // send user to add page
+        // send user to app page
         res.send({ res: "Log in success" });
       } else {
         // refresh back the login page

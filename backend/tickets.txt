@@ -1,2 +1,3 @@
 create login page
 add log out button
+save id on user's localStorage for deployment security concern
